@@ -21,7 +21,8 @@ export default class AddEmployee extends Component {
       telephone: "",
       hireDate: null,
       published: false,
-      active: false
+      active: false,
+      submitted: false
     };
   }
 
@@ -38,9 +39,16 @@ export default class AddEmployee extends Component {
   }
 
   onChangeEmail(e) {
-    this.setState({
-      email: e.target.value
-    });
+ 
+
+
+      this.setState({
+        email: e.target.value
+
+    })
+
+
+   
   }
 
   onChangeTelephone(e) {
@@ -62,6 +70,7 @@ export default class AddEmployee extends Component {
   }
 
   saveEmployee() {
+
     var data = {
 
       firstname: this.state.firstname,
@@ -70,6 +79,7 @@ export default class AddEmployee extends Component {
       telephone: this.state.telephone,
       hireDate: this.state.hireDate,
       active: this.state.active,
+      submitted: true
     
     
     };
@@ -150,7 +160,7 @@ export default class AddEmployee extends Component {
             <div className="form-group">
               <label htmlFor="email">Email</label>
               <input
-                type="text"
+                type="email"
                 className="form-control"
                 id="email"
                 required
@@ -167,7 +177,7 @@ export default class AddEmployee extends Component {
                 className="form-control"
                 id="telephone"
                 required
-                value={this.state.lastname}
+                value={this.state.telephone}
                 onChange={this.onChangeTelephone}
                 name="telephone"
               />
@@ -175,7 +185,7 @@ export default class AddEmployee extends Component {
 
 
             <div className="form-group">
-              <label htmlFor="hireDate">Telephone</label>
+              <label htmlFor="hireDate">Hiring Date</label>
               <input
                 type="date"
                 className="form-control"
@@ -187,25 +197,28 @@ export default class AddEmployee extends Component {
               />
             </div>
 
+
+
             <div className="form-group">
-              <label htmlFor="hireDate">Active employee</label>
+              <label class="form-check-label" htmlFor="inlineCheckbox1">Active employee</label>
               <input
                 type="checkbox"
                 className="form-control"
-                id="active"
-                required
-                value={this.state.active}
+                id="inlineCheckbox1"
                 onChange={this.onChangeActive}
                 name="active"
               />
             </div>
 
+            
 
          
 
             <button onClick={this.saveEmployee} className="btn btn-success">
               Submit
             </button>
+
+    
           </div>
         )}
       </div>

@@ -5,8 +5,8 @@ import './App.css';
 
 
 import AddEmployee from "./components/add-employee.component";
-// import Employee from "./components/employee.component";
-// import EmployeesList from "./components/employees-list.component";
+import Employee from "./components/employee.component";
+import EmployeesList from "./components/employees-list.component.js";
 
 
 
@@ -20,20 +20,20 @@ class App extends Component {
       <div>
 
         <nav className = "navbar navbar-expand navbar-dark bg-dark">
-          <a href="/employees" className="navbar-brand">
+          <a href="/employees" className="navbar-brand" aria-label="Homepage">
             Adbaga
           </a>
        
 
         <div className="navbar-nav mr-auto">
           <li className="nav-item">
-            <Link to={"/employees"} className="nav-link">
+            <Link to={"/employees"} className="nav-link" aria-label="Employee List">
                 Employees
             </Link>
           </li>
 
           <li className="nav-item">
-            <Link to={"/add"} className="nav-link">
+            <Link to={"/add"} className="nav-link" aria-label="Add">
               Add
             </Link>
           </li>
@@ -46,9 +46,9 @@ class App extends Component {
 
         <div className="container mt-3">
           <Switch>
-            {/* <Route exact path={["/", "/employees"]} component={EmployeesList} />
-            <Route exact path="/add" component={AddEmployees} />
-            <Route path="/employees/:id" component={Employees} /> */}
+            {/* <Route exact path={["/", "/employees"]} component={EmployeesList} /> */}
+            <Route exact path="/add" component={AddEmployee} />
+            {/* <Route path="/employees/:id" component={Employee} /> */}
           </Switch>
         </div>
 
