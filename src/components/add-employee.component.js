@@ -140,6 +140,7 @@ export default class AddEmployee extends Component {
                 value={this.state.firstname}
                 onChange={this.onChangeFirstname}
                 name="firstname"
+                aria-label="first name"
               />
             </div>
 
@@ -154,6 +155,7 @@ export default class AddEmployee extends Component {
                 value={this.state.lastname}
                 onChange={this.onChangeLastname}
                 name="lastname"
+                aria-label="last name"
               />
             </div>
 
@@ -167,12 +169,14 @@ export default class AddEmployee extends Component {
                 value={this.state.email}
                 onChange={this.onChangeEmail}
                 name="email"
+                aria-label="email"
               />
             </div>
 
             <div className="form-group">
               <label htmlFor="telephone">Telephone</label>
               <input
+              placeholder="Please include the country code e.g. +372 123XXX"
                 type="text"
                 className="form-control"
                 id="telephone"
@@ -180,6 +184,7 @@ export default class AddEmployee extends Component {
                 value={this.state.telephone}
                 onChange={this.onChangeTelephone}
                 name="telephone"
+                aria-label="Telephone number"
               />
             </div>
 
@@ -194,6 +199,7 @@ export default class AddEmployee extends Component {
                 value={this.state.hireDate}
                 onChange={this.onChangeHireDate}
                 name="hireDate"
+                aria-label="Hire Date"
               />
             </div>
 
@@ -214,7 +220,7 @@ export default class AddEmployee extends Component {
 
          
 
-            <button onClick={this.saveEmployee} className="btn btn-success">
+            <button onClick={this.saveEmployee} className="btn btn-success" aria-label="submit">
               Submit
             </button>
 
